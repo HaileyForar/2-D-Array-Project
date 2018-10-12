@@ -49,15 +49,15 @@ public class GameBoardLayout
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
         	System.out.println(" ----------------------------------------------------");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
-        	System.out.println("8 |     |     |    |    |    |    |    |    |    |    |");
+        	System.out.println("8 | " + GameBoardLayout [7] [0] + " | " + GameBoardLayout [7] [1] + " | " + GameBoardLayout [7] [2] + " | " + GameBoardLayout [7] [3] + " | " + GameBoardLayout [7] [4] + " | " + GameBoardLayout [7] [5] + " | " + GameBoardLayout [7] [6] + " | " + GameBoardLayout [7] [7] + " | " + GameBoardLayout [7] [8] + " | " + GameBoardLayout [7] [9] + " | " + GameBoardLayout [7] [10] + " | ");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
         	System.out.println(" ----------------------------------------------------");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
-        	System.out.println("9 |     |     |    |    |    |    |    |    |    |    |");
+        	System.out.println("9 | " + GameBoardLayout [8] [0] + " | " + GameBoardLayout [8] [1] + " | " + GameBoardLayout [8] [2] + " | " + GameBoardLayout [8] [3] + " | " + GameBoardLayout [8] [4] + " | " + GameBoardLayout [8] [5] + " | " + GameBoardLayout [8] [6] + " | " + GameBoardLayout [8] [7] + " | " + GameBoardLayout [8] [8] + " | " + GameBoardLayout [8] [9] + " | " + GameBoardLayout [8] [10] + " | ");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
         	System.out.println(" ----------------------------------------------------");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
-        	System.out.println("10|     |     |    |    |    |    |    |    |    |    |");
+        	System.out.println("10| " + GameBoardLayout [9] [0] + " | " + GameBoardLayout [9] [1] + " | " + GameBoardLayout [9] [2] + " | " + GameBoardLayout [9] [3] + " | "  + GameBoardLayout [9] [4] + " | "+ GameBoardLayout [9] [5] + " | " + GameBoardLayout [9] [6] + " | " + GameBoardLayout [9] [7] + " | " + GameBoardLayout [9] [8] + " | " + GameBoardLayout [9] [9] + " | " + GameBoardLayout [9] [10] + " | ");
         	System.out.println("  |     |     |    |    |    |    |    |    |    |    |");
         	System.out.println(" ----------------------------------------------------");
         }
