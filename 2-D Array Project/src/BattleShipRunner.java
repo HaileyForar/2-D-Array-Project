@@ -10,10 +10,10 @@ public class BattleShipRunner
 
 		public static void main(String[] args)
 			{
-//				userInput();
+				userInput();
 				fillLayout();
 				boardDisplay();
-//				gameSetUp();
+				gameSetUp();
 				
 
 			}
@@ -30,27 +30,140 @@ public class BattleShipRunner
 
 			  System.out.println("The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
 			  
-			  Scanner userInput1 = new Scanner (System.in);
+			  System.out.println("All that you have to do is enter in the coordinated of where you want to hit, example: A,1");
+			  
+			  //Parse for the letter A-a
+			 move = row;
+			 
+			 rowInput = move.substring(0,1);
+			 rowInput = rowInput.toLowerCase();
+			 if(rowInput.equals("A") || row.Input.equals("a"))
+				 {
+					 row = 0;
+				 }
+			 
+			 col = Integer.parseInt(move.substring (1,2));
+			 
+			 //Parse for the letter B-b
+			 move = 
+			
+			 rowInput = move.substring(0,1);
+			 rowInput = rowInput.toLowerCase();
+			 if(rowInput.equals("B") || rowInput.equals("b"))
+						 {
+							 row = 0;
+						 }
+					 
+              col = Integer.parseInt(move.substring(1,2));
+              
+              //Parse for the letter C-c
+              move = 
+            		  
+             rowInput = move.substring(0,1);
+             rowInput = rowInput.toLowerCase();
+             if(rowInput.equals ("C") || rowInput.equals("c"))
+            	 {
+            		 row = 0;
+            	 }
+             
+             col = Integer.parseInt(move.substring(1,2));
+             
+             //Parse for the letter D-d
+             move = 
+            		 
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("D") || rowInput.equals("d"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2));
+              
+            //Parse for the letter E-e
+            move = 
+            
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("E") || rowInput.equals("e"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2));
+            
+            //Parse for the letter F-f
+            move = 
+            		
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("F") || rowInput.equals("f"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1, 2));
+            
+            //Parse for the letter G-g
+            move= 
+            		
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("G") || rowInput.equals("g"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2));
+            
+            //Parse for the letter H-h
+            move = 
+            		
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("H") || rowInput.equals("h"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2));
+            
+            //Parse for the letter I-i
+            move = 
+            		
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("I") || rowInput.equals("i"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2));
+            
+            //Parse for the letter J-j
+            move = 
+            		
+            rowInput = move.substring(0,1);
+            rowInput = rowInput.toLowerCase();
+            if(rowInput.equals("J") || rowInput("j"))
+            	{
+            		row = 0;
+            	}
+            
+            col = Integer.parseInt(move.substring(1,2);  
+              
+              Scanner userInput1 = new Scanner (System.in);
 			  int numberInserted = userInput1.nextInt();
-
-				if(numberInserted > )
-					{
-						System.out.println("That input is invalid, please try again.");
-						userInput();
-					}
-				
-				
-			  
-			  
 			}
+		
 		
 		public static void fillLayout()
 		{
-        	for(int i = 0; i < 10; i++)
+        	for(int row = 0; row < 10; row++)
         		{
-        	     for(int k = 0; k < 10; k++)
+        	     for(int col = 0; col < 10; col++)
         			{
-        				GameBoardLayout [i] [k] = "x";
+        				GameBoardLayout [row] [col] = " ";
         			}
         		}
 		}
