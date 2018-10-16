@@ -3,17 +3,15 @@ import java.util.Scanner;
 
 public class BattleShipRunner
 	{
-		
-		 
 		private static final String[][] GameBoardLayout = new String [10] [10];
-
-
+		
 		public static void main(String[] args)
 			{
-				userInput();
+//				userInput();
 				fillLayout();
 				boardDisplay();
-				gameSetUp();
+//				gameSetUp();
+				battleshipFacts();
 				
 
 			}
@@ -156,10 +154,9 @@ public class BattleShipRunner
 			  int numberInserted = userInput1.nextInt();
 			}
 		
-		
 		public static void fillLayout()
 		{
-        	for(int row = 0; row < 10; row++)
+			for(int row = 0; row < 10; row++)
         		{
         	     for(int col = 0; col < 10; col++)
         			{
@@ -167,6 +164,7 @@ public class BattleShipRunner
         			}
         		}
 		}
+		
 		
 		public static void boardDisplay()
 		{
@@ -221,19 +219,23 @@ public class BattleShipRunner
 
 			        Battleship one = new Battleship();
 
-			        one.setName("Destroyer"); 
+			        one.setName("Aircraft Carrier"); 
 
 			        Battleship two = new Battleship();
 
-			        two.setName("Cruiser");
+			        two.setName("Battleship");
 
 			        Battleship three = new Battleship();
 
-			        three.setName("Lightweight");
+			        three.setName("Cruiser");
 			        
 			        Battleship four = new Battleship();
 			        
-			        four.setName("Aircraft Carrier");
+			        four.setName("Submarine");
+			        
+			        Battleship five = new Battleship();
+			        
+			        five.setName("Destroyer");
 
 			        battleshipList.add(one);
 
@@ -242,7 +244,40 @@ public class BattleShipRunner
 			        battleshipList.add(three);
 			        
 			        battleshipList.add(four);
+			        
+			        battleshipList.add(five);
 
+		}
+		
+		public static void battleshipFacts()
+		{
+			System.out.println("Now that you have finished the game, here are some fun facts about the ships in real life...");
+			
+			System.out.println("AIRCRAFT CARRIERS:");
+			System.out.println("The Nimitz class aircraft carrier can operate for 20 years without needing to refuel!");
+			System.out.println("During WWII, the British had serious plans for making an aircraft carrier primarily out of wood pulp and ice!");
+			System.out.println("In 1957, 10 Sydney University students dressed as pirates, boarded the aircraft carrier USS Bennington, reached the bridge, and announced over the PA that they had captured the ship!");
+			
+			System.out.println("BATTLESHIPS:");
+			System.out.println("A Battleship is an armored warship with a battery consisting of heavy caliber guns");
+			System.out.println("A Battleship's job is to basically blow holes in other ships");
+			System.out.println("In Britain, their battleships are called Dreadnoughts");
+			
+			System.out.println("CRUISERS:");
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			
+			System.out.println("SUBMARINES");
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			
+			System.out.println("DESTROYERS:");
+			System.out.println();
+			System.out.println();
+			System.out.println();
+			
 		}
 
 	}
