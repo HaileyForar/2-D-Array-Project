@@ -7,24 +7,56 @@ public class BattleShipRunner
 		
 		public static void main(String[] args)
 			{
-				userInput();
-				fillLayout();
-				boardDisplay();
+//				userInput();
+//				fillLayout();
+//				boardDisplay();
 //				gameSetUp();
-//				battleshipFacts();
+				battleshipFacts();
 				
 
 			}
 		
 		public static void userInput()
 			{
+				
+
+		        Battleship one = new Battleship();
+
+		        one.setName("Aircraft Carrier"); 
+
+		        Battleship two = new Battleship();
+
+		        two.setName("Battleship");
+
+		        Battleship three = new Battleship();
+
+		        three.setName("Cruiser");
+		        
+		        Battleship four = new Battleship();
+		        
+		        four.setName("Submarine");
+		        
+		        Battleship five = new Battleship();
+		        
+		        five.setName("Destroyer");
+
+		        battleshipList.add(one);
+
+		        battleshipList.add(two);
+
+		        battleshipList.add(three);
+		        
+		        battleshipList.add(four);
+		        
+		        battleshipList.add(five);
+		        
 				Scanner userInput = new Scanner (System.in);
 				System.out.println("What is your name?");
 				String name = userInput.nextLine();
 				
 			  System.out.println( name + ", your mission, if you choose to accept it, is to sink all the warships!");
 
-			  System.out.println("Destroyer, Cruiser, Battleship, and Aircraft Carrier!");
+			  System.out.println(" There are 5 different ships: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer!");
 
 			  System.out.println("The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
 			  
@@ -146,7 +178,7 @@ public class BattleShipRunner
             	}
             
 //            col = Integer.parseInt(move.substring(1,2));  
-              
+            
 			}
 		
 		public static void fillLayout()
@@ -208,70 +240,54 @@ public class BattleShipRunner
 		}
 		
 		
-		public static void gameSetUp()
-		{
-			
-
-			        Battleship one = new Battleship();
-
-			        one.setName("Aircraft Carrier"); 
-
-			        Battleship two = new Battleship();
-
-			        two.setName("Battleship");
-
-			        Battleship three = new Battleship();
-
-			        three.setName("Cruiser");
-			        
-			        Battleship four = new Battleship();
-			        
-			        four.setName("Submarine");
-			        
-			        Battleship five = new Battleship();
-			        
-			        five.setName("Destroyer");
-
-			        battleshipList.add(one);
-
-			        battleshipList.add(two);
-
-			        battleshipList.add(three);
-			        
-			        battleshipList.add(four);
-			        
-			        battleshipList.add(five);
-
-		}
-		
 		public static void battleshipFacts()
 		{
 			System.out.println("Now that you have finished the game, here are some fun facts about the ships in real life...");
+			System.out.println("");
 			
 			System.out.println("AIRCRAFT CARRIERS:");
-			System.out.println("The Nimitz class aircraft carrier can operate for 20 years without needing to refuel!");
-			System.out.println("During WWII, the British had serious plans for making an aircraft carrier primarily out of wood pulp and ice!");
-			System.out.println("In 1957, 10 Sydney University students dressed as pirates, boarded the aircraft carrier USS Bennington, reached the bridge, and announced over the PA that they had captured the ship!");
+			System.out.println("");
+			System.out.println(" - The Nimitz class aircraft carrier can operate for 20 years without needing to refuel.");
+			System.out.println("");
+			System.out.println(" - During WWII, the British had serious plans for making an aircraft carrier primarily out of wood pulp and ice.");
+			System.out.println("");
+			System.out.println(" - In 1957, 10 Sydney University students dressed as pirates, boarded the aircraft carrier USS Bennington, reached the bridge, and announced over the PA that they had captured the ship.");
+			System.out.println("");
 			
 			System.out.println("BATTLESHIPS:");
-			System.out.println("A Battleship is an armored warship with a battery consisting of heavy caliber guns");
-			System.out.println("A Battleship's job is to basically blow holes in other ships");
-			System.out.println("In Britain, their battleships are called Dreadnoughts");
+			System.out.println("");
+			System.out.println(" - A Battleship is an armored warship with a battery consisting of heavy caliber guns.");
+			System.out.println("");
+			System.out.println(" - A Battleship's job is to basically blow holes in other ships.");
+			System.out.println("");
+			System.out.println(" - In Britain, their battleships are called Dreadnoughts.");
+			System.out.println("");
 			
 			System.out.println("CRUISERS:");
-			System.out.println();
-			System.out.println();
-			System.out.println();
+			System.out.println("");
+			System.out.println(" - The 1884 Navy Appropriation Act authorized the construction of cruisers, and this marked the transition from wood to steel and steam.");
+			System.out.println("");
+			System.out.println(" - The USS New York was the first armored cruiser.");
+			System.out.println("");
+			System.out.println(" - The fleet base at Pearl Harbor, Hawaii was ceremonially opened when the armored cruiser USS California steamed through the channel.");
+			System.out.println("");
 			
 			System.out.println("SUBMARINES");
-			System.out.println();
-			System.out.println();
-			System.out.println();
+		    System.out.println("");
+			System.out.println(" - Submarines use ballast tanks to hold water, allowing them to submerge when necessary.");
+			System.out.println("");
+			System.out.println(" - Both sides of the American Civil War built and used submarines.");
+			System.out.println("");
+			System.out.println(" - Both the United States and Soviet Union maintained significant submarine fleets during the Cold War.");
+			System.out.println("");
 			
 			System.out.println("DESTROYERS:");
-			System.out.println();
-			System.out.println();
-			System.out.println();
+			System.out.println("");
+			System.out.println(" - Destroyers are smaller ships that specialize in anti-ship, and anti-submarine warfare.");
+			System.out.println("");
+			System.out.println(" - Destroyers carry missiles that will aquire their targets underwater to strike other ships and submarines ");
+			System.out.println("");
+			System.out.println(" - Destroyers are fast, manuverable and long endurance ships.");
 			
 		}
 
