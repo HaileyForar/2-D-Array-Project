@@ -7,48 +7,49 @@ public class BattleShipRunner
 		
 		public static void main(String[] args)
 			{
-//				userInput();
-//				fillLayout();
-//				boardDisplay();
+			    battleshipPlacement();
+				userInput();
+				fillLayout();
+				boardDisplay();
 //				gameSetUp();
-				battleshipFacts();
+//				battleshipFacts();
 				
-
 			}
+		
+		public static void battleshipPlacement()
+		{
+			int [] [] placement = new int [10] [10];
+			   
+			// Placement of the Destroyer
+			     placement [1] [1] = 1;
+			     placement [1] [2] = 1;
+			     
+			//Placement of the Submarine
+			     placement [5] [0] = 1;
+			     placement [5] [1] = 1;
+			     placement [5] [2] = 1;
+			     
+			//Placement of the Cruiser
+			     placement [9] [9] = 1;
+			     placement [8] [9] = 1;
+			     placement [7] [9] = 1;
+			     
+		    //Placement of the Battleship
+			     placement [3] [6] = 1;
+			     placement [4] [6] = 1;
+			     placement [5] [6] = 1;
+			     placement [6] [6] = 1;
+			     
+			//Placement of the Aircraft Carrier
+			     placement [8] [2] = 1;
+			     placement [8] [3] = 1;
+			     placement [8] [4] = 1;
+			     placement [8] [5] = 1;
+			     placement [8] [6] = 1;
+		}
 		
 		public static void userInput()
 			{
-				
-
-		        Battleship one = new Battleship();
-
-		        one.setName("Aircraft Carrier"); 
-
-		        Battleship two = new Battleship();
-
-		        two.setName("Battleship");
-
-		        Battleship three = new Battleship();
-
-		        three.setName("Cruiser");
-		        
-		        Battleship four = new Battleship();
-		        
-		        four.setName("Submarine");
-		        
-		        Battleship five = new Battleship();
-		        
-		        five.setName("Destroyer");
-
-		        battleshipList.add(one);
-
-		        battleshipList.add(two);
-
-		        battleshipList.add(three);
-		        
-		        battleshipList.add(four);
-		        
-		        battleshipList.add(five);
 		        
 				Scanner userInput = new Scanner (System.in);
 				System.out.println("What is your name?");
@@ -56,7 +57,7 @@ public class BattleShipRunner
 				
 			  System.out.println( name + ", your mission, if you choose to accept it, is to sink all the warships!");
 
-			  System.out.println(" There are 5 different ships: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer!");
+			  System.out.println("There are 5 different ships: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer!");
 
 			  System.out.println("The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
 			  
@@ -78,8 +79,7 @@ public class BattleShipRunner
 					 row = 0;
 				 }
 			 
-//			 col = Integer.parseInt(move.substring (1,2));
-			 
+
 			 //Parse for the letter B-b
 			
 			 rowInput = move.substring(0,1);
@@ -89,8 +89,7 @@ public class BattleShipRunner
 							 row = 1;
 						 }
 					 
-//			 col = Integer.parseInt(move.substring (1,2));
-              
+
               //Parse for the letter C-c
              
              rowInput = move.substring(0,1);
@@ -100,8 +99,7 @@ public class BattleShipRunner
             		 row = 2;
             	 }
              
-//             col = Integer.parseInt(move.substring(1,2));
-             
+
              //Parse for the letter D-d
              
             rowInput = move.substring(0,1);
@@ -111,8 +109,7 @@ public class BattleShipRunner
             		row = 3;
             	}
             
-//            col = Integer.parseInt(move.substring(1,2));
-              
+
             //Parse for the letter E-e
           
             rowInput = move.substring(0,1);
@@ -122,8 +119,7 @@ public class BattleShipRunner
             		row = 4;
             	}
             
-//            col = Integer.parseInt(move.substring(1,2));
-            
+
             //Parse for the letter F-f
            
             rowInput = move.substring(0,1);
@@ -133,8 +129,7 @@ public class BattleShipRunner
             		row = 5;
             	}
             
-//            col = Integer.parseInt(move.substring(1, 2));
-            
+
             //Parse for the letter G-g
                      
             rowInput = move.substring(0,1);
@@ -144,8 +139,7 @@ public class BattleShipRunner
             		row = 6;
             	}
             
-//            col = Integer.parseInt(move.substring(1,2));
-            
+
             //Parse for the letter H-h
             		
             rowInput = move.substring(0,1);
@@ -155,8 +149,7 @@ public class BattleShipRunner
             		row = 7;
             	}
             
-//            col = Integer.parseInt(move.substring(1,2));
-            
+
             //Parse for the letter I-i
             
             rowInput = move.substring(0,1);
@@ -165,8 +158,6 @@ public class BattleShipRunner
             	{
             		row = 8;
             	}
-            
-//            col = Integer.parseInt(move.substring(1,2));
             
             //Parse for the letter J-j
            
@@ -177,7 +168,9 @@ public class BattleShipRunner
             		row = 9;
             	}
             
-//            col = Integer.parseInt(move.substring(1,2));  
+            col = Integer.parseInt(move.substring(1,2));
+            col = col - 1;
+            
             
 			}
 		
