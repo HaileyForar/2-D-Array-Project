@@ -4,13 +4,25 @@ public class Battleship
 
 		String name;
 		int size;
+		int hits;
 		
-		public Battleship (String n, int s)
+		public Battleship (String n, int s, int h)
 		{
 			name = n;
 			size = s;
+			hits = h;
 		}
 		
+		public int getHits()
+			{
+				return hits;
+			}
+
+		public void setHits(int hits)
+			{
+				this.hits = hits;
+			}
+
 		public static void shoot()
 		{
 			System.out.println("Bang");

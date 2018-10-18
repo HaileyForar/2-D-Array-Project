@@ -3,15 +3,20 @@ import java.util.Scanner;
 
 public class BattleShipRunner
 	{
-		private static final String[][] GameBoardLayout = new String [10] [10];
+		public static String[][] GameBoardLayout = new String [10] [10];
+		
+		public static int [] [] placement = new int [10] [10];
 		
 		public static void main(String[] args)
 			{
 				BattleshipDatabase.fillNavy();
 			    battleshipPlacement();
-				userInput();
 				fillLayout();
+//				for()
+					{
+				userInput();
 				boardDisplay();
+					}
 //				battleshipFacts();
 				
 			}
@@ -48,30 +53,44 @@ public class BattleShipRunner
 			     placement [8] [6] = 1;
 			     
 			   //Using Boolean to decide what to do while the user is still entering in coordinates (before the game finishes)  
-		            boolean isStillGuessing = true;
-		    		while(isStillGuessing)
-		    			{
-		    			
-		    			  //If users guess of coordinates is not a ship, then it will print out an "O" (for miss)
-		    				int guess = userInput.nextInt();
-		    				if (guess !== placement)
-		    					{
-		    						System.out.println(" O ");
-		    					}
-		    			  //If the users guess of coordinates is a one of the ships' coordinates, then it will print out an "X" (for hit)
-		    				else if (guess == placement)
-		    				{
-		    					System.out.println(" X ");
-		    				}
-		    				
-		    			  //Once all of the ships have been hit, the system will end the game and print out, "The game is over"
-		    				else ()
-		    				{
-		    					System.out.println("The game is over");
-		    				}
-		    			}
+//		            boolean isStillGuessing = true;
+//		    		while(isStillGuessing)
+//		    			{
+//		    			
+//		    			  //If users guess of coordinates is not a ship, then it will print out an "O" (for miss)
+//		    				String guess = userInput.nextLine();
+//		    				if (guess !== placement)
+//		    					{
+//		    						System.out.println(" O ");
+//		    					}
+//		    			  //If the users guess of coordinates is a one of the ships' coordinates, then it will print out an "X" (for hit)
+//		    				else if (guess == placement)
+//		    				{
+//		    					System.out.println(" X ");
+//		    				}
+//		    				
+//		    			  //Once all of the ships have been hit, the system will end the game and print out, "The game is over"
+//		    				else ()
+//		    				{
+//		    					System.out.println("The game is over");
+//		    				}
+//		    			}
 				 
 		}
+		
+		public static void fillLayout()
+			{
+			  //Tells the computer the dimensions of the game board	
+				for(int row = 0; row < 10; row++)
+	        		{
+	        	     for(int col = 0; col < 10; col++)
+	        			{
+	        				GameBoardLayout [row] [col] = " ";
+	        			}
+	        		}
+			}
+			
+			
 		
 		public static void userInput()
 			{
@@ -96,113 +115,111 @@ public class BattleShipRunner
 			  
 			  int row = 0;
 			  int col = 0;
-			  String rowInput = "";
-			 
+			  String colInput = "";
+			  
 		   //Parse for the letter A-a  
-			 rowInput = move.substring(0,1);
-			 rowInput = rowInput.toLowerCase();
-			 if(rowInput.equals("A") || rowInput.equals("a"))
+			 colInput = move.substring(0,1);
+			 colInput = colInput.toLowerCase();
+			 if(colInput.equals("a"))
 				 {
-					 row = 0;
+					 col = 0;
 				 }
 			 
 
 		   //Parse for the letter B-b
-			 rowInput = move.substring(0,1);
-			 rowInput = rowInput.toLowerCase();
-			 if(rowInput.equals("B") || rowInput.equals("b"))
-						 {
-							 row = 1;
-						 }
+			 colInput = move.substring(0,1);
+			 colInput = colInput.toLowerCase();
+			 if(colInput.equals("b"))
+			     {
+        			 col = 1;
+				 }
 					 
 
            //Parse for the letter C-c
-             rowInput = move.substring(0,1);
-             rowInput = rowInput.toLowerCase();
-             if(rowInput.equals ("C") || rowInput.equals("c"))
+             colInput = move.substring(0,1);
+             colInput = colInput.toLowerCase();
+             if(colInput.equals("c"))
             	 {
-            		 row = 2;
+            		 col = 2;
             	 }
              
 
           //Parse for the letter D-d
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("D") || rowInput.equals("d"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("d"))
             	{
-            		row = 3;
+            		col = 3;
             	}
             
 
           //Parse for the letter E-e
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("E") || rowInput.equals("e"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("e"))
             	{
-            		row = 4;
+            		col = 4;
             	}
             
 
           //Parse for the letter F-f
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("F") || rowInput.equals("f"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("f"))
             	{
-            		row = 5;
+            		col = 5;
             	}
             
 
           //Parse for the letter G-g
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("G") || rowInput.equals("g"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("g"))
             	{
-            		row = 6;
+            		col = 6;
             	}
             
 
           //Parse for the letter H-h	
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("H") || rowInput.equals("h"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("h"))
             	{
-            		row = 7;
+            		col = 7;
             	}
             
 
           //Parse for the letter I-i
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("I") || rowInput.equals("i"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("i"))
             	{
-            		row = 8;
+            		col = 8;
             	}
             
           //Parse for the letter J-j
-            rowInput = move.substring(0,1);
-            rowInput = rowInput.toLowerCase();
-            if(rowInput.equals("J") || rowInput.equals("j"))
+            colInput = move.substring(0,1);
+            colInput = colInput.toLowerCase();
+            if(colInput.equals("j"))
             	{
-            		row = 9;
+            		col = 9;
             	}
             
-            col = Integer.parseInt(move.substring(1,2));
-            col = col - 1;
+            row = Integer.parseInt(move.substring(1));
+            row = row - 1;
             
+            
+            if(placement [row] [col] == 1)
+            	{
+            		GameBoardLayout [row] [col] = "X"; 
+                    
+            	}
+            
+            else
+            {
+            	GameBoardLayout [row] [col] = "O"; 
+            }
 		}
-		
-		public static void fillLayout()
-		{
-		  //Tells the computer the dimensions of the game board	
-			for(int row = 0; row < 10; row++)
-        		{
-        	     for(int col = 0; col < 10; col++)
-        			{
-        				GameBoardLayout [row] [col] = " ";
-        			}
-        		}
-		}
-		
 		
 		public static void boardDisplay()
 		{
