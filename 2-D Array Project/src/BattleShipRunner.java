@@ -7,11 +7,11 @@ public class BattleShipRunner
 		
 		public static void main(String[] args)
 			{
+				BattleshipDatabase.fillNavy();
 			    battleshipPlacement();
 				userInput();
 				fillLayout();
 				boardDisplay();
-//				gameSetUp();
 //				battleshipFacts();
 				
 			}
@@ -46,15 +46,41 @@ public class BattleShipRunner
 			     placement [8] [4] = 1;
 			     placement [8] [5] = 1;
 			     placement [8] [6] = 1;
+			     
+			   //Using Boolean to decide what to do while the user is still entering in coordinates (before the game finishes)  
+		            boolean isStillGuessing = true;
+		    		while(isStillGuessing)
+		    			{
+		    			
+		    			  //If users guess of coordinates is not a ship, then it will print out an "O" (for miss)
+		    				int guess = userInput.nextInt();
+		    				if (guess !== placement)
+		    					{
+		    						System.out.println(" O ");
+		    					}
+		    			  //If the users guess of coordinates is a one of the ships' coordinates, then it will print out an "X" (for hit)
+		    				else if (guess == placement)
+		    				{
+		    					System.out.println(" X ");
+		    				}
+		    				
+		    			  //Once all of the ships have been hit, the system will end the game and print out, "The game is over"
+		    				else ()
+		    				{
+		    					System.out.println("The game is over");
+		    				}
+		    			}
+				 
 		}
 		
 		public static void userInput()
 			{
-		        
+		     //Asks the user to input their name
 				Scanner userInput = new Scanner (System.in);
 				System.out.println("What is your name?");
 				String name = userInput.nextLine();
 				
+			 //Contains basic information about the game and how to play
 			  System.out.println( name + ", your mission, if you choose to accept it, is to sink all the warships!");
 
 			  System.out.println("There are 5 different ships: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer!");
@@ -63,15 +89,16 @@ public class BattleShipRunner
 			  
 			  System.out.println("All that you have to do is enter in the coordinates of where you want to hit, example: A1");
 			  
+			//Allows the user to input their coordinates of where they want to hit on the game board  
 			  Scanner userInput1 = new Scanner (System.in);
 			  System.out.println("What is your move?");
 			  String move = userInput1.nextLine();
 			  
-			  //Parse for the letter A-a
 			  int row = 0;
 			  int col = 0;
 			  String rowInput = "";
 			 
+		   //Parse for the letter A-a  
 			 rowInput = move.substring(0,1);
 			 rowInput = rowInput.toLowerCase();
 			 if(rowInput.equals("A") || rowInput.equals("a"))
@@ -80,8 +107,7 @@ public class BattleShipRunner
 				 }
 			 
 
-			 //Parse for the letter B-b
-			
+		   //Parse for the letter B-b
 			 rowInput = move.substring(0,1);
 			 rowInput = rowInput.toLowerCase();
 			 if(rowInput.equals("B") || rowInput.equals("b"))
@@ -90,8 +116,7 @@ public class BattleShipRunner
 						 }
 					 
 
-              //Parse for the letter C-c
-             
+           //Parse for the letter C-c
              rowInput = move.substring(0,1);
              rowInput = rowInput.toLowerCase();
              if(rowInput.equals ("C") || rowInput.equals("c"))
@@ -100,8 +125,7 @@ public class BattleShipRunner
             	 }
              
 
-             //Parse for the letter D-d
-             
+          //Parse for the letter D-d
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("D") || rowInput.equals("d"))
@@ -110,8 +134,7 @@ public class BattleShipRunner
             	}
             
 
-            //Parse for the letter E-e
-          
+          //Parse for the letter E-e
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("E") || rowInput.equals("e"))
@@ -120,8 +143,7 @@ public class BattleShipRunner
             	}
             
 
-            //Parse for the letter F-f
-           
+          //Parse for the letter F-f
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("F") || rowInput.equals("f"))
@@ -130,8 +152,7 @@ public class BattleShipRunner
             	}
             
 
-            //Parse for the letter G-g
-                     
+          //Parse for the letter G-g
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("G") || rowInput.equals("g"))
@@ -140,8 +161,7 @@ public class BattleShipRunner
             	}
             
 
-            //Parse for the letter H-h
-            		
+          //Parse for the letter H-h	
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("H") || rowInput.equals("h"))
@@ -150,8 +170,7 @@ public class BattleShipRunner
             	}
             
 
-            //Parse for the letter I-i
-            
+          //Parse for the letter I-i
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("I") || rowInput.equals("i"))
@@ -159,8 +178,7 @@ public class BattleShipRunner
             		row = 8;
             	}
             
-            //Parse for the letter J-j
-           
+          //Parse for the letter J-j
             rowInput = move.substring(0,1);
             rowInput = rowInput.toLowerCase();
             if(rowInput.equals("J") || rowInput.equals("j"))
@@ -171,11 +189,11 @@ public class BattleShipRunner
             col = Integer.parseInt(move.substring(1,2));
             col = col - 1;
             
-            
-			}
+		}
 		
 		public static void fillLayout()
 		{
+		  //Tells the computer the dimensions of the game board	
 			for(int row = 0; row < 10; row++)
         		{
         	     for(int col = 0; col < 10; col++)
@@ -188,6 +206,7 @@ public class BattleShipRunner
 		
 		public static void boardDisplay()
 		{
+		  //Visual Game - the one that will print when program is run	
 			System.out.println("     A     B     C     D     E     F     G     H     I     J  ");
         	System.out.println(" --------------------------------------------------------------");
         	System.out.println("  |     |     |     |     |     |     |     |     |     |     |");
@@ -235,6 +254,7 @@ public class BattleShipRunner
 		
 		public static void battleshipFacts()
 		{
+		  //Fun little extra thing at the end of the game - Prints out some random facts about each of the different ships	
 			System.out.println("Now that you have finished the game, here are some fun facts about the ships in real life...");
 			System.out.println("");
 			
