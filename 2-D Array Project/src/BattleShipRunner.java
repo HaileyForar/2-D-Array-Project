@@ -1,8 +1,22 @@
+import javax.swing.JFrame;
+
+import javax.swing.JOptionPane;
 
 import java.util.Scanner;
 
-public class BattleShipRunner
+import javax.swing.JOptionPane;
+
+public class BattleShipRunner extends JFrame
 	{
+		
+		private static final long serialVersionUID = 1L;
+		
+		static String name;
+		
+		static int className;
+		
+		static JFrame frame = new JFrame();
+			
 		public static String[][] GameBoardLayout = new String [10] [10];
 		
 		public static int [] [] placement = new int [10] [10];
@@ -14,11 +28,15 @@ public class BattleShipRunner
 		public static int hitCounter = 0;
 		
 		public static void main(String[] args)
-			{
+		
+		{
+		
+		
 				BattleshipDatabase.fillNavy();
 				introToTheGame();
 			    battleshipPlacement();
 				fillLayout();
+	
 
 				while(isStillGuessing)
 					
@@ -39,78 +57,28 @@ public class BattleShipRunner
 			}
 		     else if(isStillGuessing == false)
 		    {
-			   System.out.println("The game has ended");  	
-			   
-			   //Fun little extra thing at the end of the game - Prints out some random facts about each of the different ships	
-				System.out.println("Now that you have finished the game, here are some fun facts about the ships in real life...");
-				System.out.println("");
-				
-				System.out.println("AIRCRAFT CARRIERS:");
-				System.out.println("");
-				System.out.println(" - The Nimitz class aircraft carrier can operate for 20 years without needing to refuel.");
-				System.out.println("");
-				System.out.println(" - During WWII, the British had serious plans for making an aircraft carrier primarily out of wood pulp and ice.");
-				System.out.println("");
-				System.out.println(" - In 1957, 10 Sydney University students dressed as pirates, boarded the aircraft carrier USS Bennington, reached the bridge, and announced over the PA that they had captured the ship.");
-				System.out.println("");
-				
-				System.out.println("BATTLESHIPS:");
-				System.out.println("");
-				System.out.println(" - A Battleship is an armored warship with a battery consisting of heavy caliber guns.");
-				System.out.println("");
-				System.out.println(" - A Battleship's job is to basically blow holes in other ships.");
-				System.out.println("");
-				System.out.println(" - In Britain, their battleships are called Dreadnoughts.");
-				System.out.println("");
-				
-				System.out.println("CRUISERS:");
-				System.out.println("");
-				System.out.println(" - The 1884 Navy Appropriation Act authorized the construction of cruisers, and this marked the transition from wood to steel and steam.");
-				System.out.println("");
-				System.out.println(" - The USS New York was the first armored cruiser.");
-				System.out.println("");
-				System.out.println(" - The fleet base at Pearl Harbor, Hawaii was ceremonially opened when the armored cruiser USS California steamed through the channel.");
-				System.out.println("");
-				
-				System.out.println("SUBMARINES");
-			    System.out.println("");
-				System.out.println(" - Submarines use ballast tanks to hold water, allowing them to submerge when necessary.");
-				System.out.println("");
-				System.out.println(" - Both sides of the American Civil War built and used submarines.");
-				System.out.println("");
-				System.out.println(" - Both the United States and Soviet Union maintained significant submarine fleets during the Cold War.");
-				System.out.println("");
-				
-				System.out.println("DESTROYERS:");
-				System.out.println("");
-				System.out.println(" - Destroyers are smaller ships that specialize in anti-ship, and anti-submarine warfare.");
-				System.out.println("");
-				System.out.println(" - Destroyers carry missiles that will aquire their targets underwater to strike other ships and submarines ");
-				System.out.println("");
-				System.out.println(" - Destroyers are fast, manuverable and long endurance ships.");
+		    	endOfTheGame();
+		    	aircraftCarrier();
+		    	battleship();
+		    	cruiser();
+		    	submarine();
+		    	destroyer();
 		    }
 			    
-					}
+				   }
 				
-			}
+		}
 		
 		public static void introToTheGame()
 		{
-			 //Asks the user to input their name
-			Scanner userInput = new Scanner (System.in);
-			System.out.println("What is your name?");
-			String name = userInput.nextLine();
+			//asks what your name is to start off the program
+			name = JOptionPane.showInputDialog("What is your name?");  
 			
-		 //Contains basic information about the game and how to play
-		  System.out.println( name + ", your mission, if you choose to accept it, is to sink all the warships!");
-
-		  System.out.println("There are 5 different ships: Aircraft Carrier, Battleship, Cruiser, Submarine and Destroyer!");
-
-		  System.out.println("The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
-		  
-		  System.out.println("All that you have to do is enter in the coordinates of where you want to hit, example: A1");
-		  
-		  System.out.println("For reference: X = Hit and O = Miss");
+			//Contains basic information about the game and how to play
+			JOptionPane.showMessageDialog(frame, name + ", your mission, if you choose to accept it, is to sink all the warships!");
+			JOptionPane.showMessageDialog(frame, "There are 5 differend ships: Aircraft Carrier, Battleship, Cruiser, Submarine, and Destroyer!");
+			JOptionPane.showMessageDialog(frame, "The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
+			JOptionPane.showMessageDialog(frame, "For reference: X = Hit and O = Miss");
 		}
 		
 		public static void battleshipPlacement()
@@ -327,6 +295,100 @@ public class BattleShipRunner
         	System.out.println("  |     |     |     |     |     |     |     |     |     |     |");
         	System.out.println(" --------------------------------------------------------------");
 		}
+		
+		public static void endOfTheGame()
+		{
+			
+		JOptionPane.showMessageDialog(frame, "The game has ended");
+		JOptionPane.showMessageDialog(frame, "Now that you have finished the game, here are some fun facts about the ships in real life...");
+		
+		 //buttons
+  		Object[] options1 = {"Aircraft Carriers","Battleships" ,"Cruisers", "Submarines", "Destroyers" };
+  		className = JOptionPane.showOptionDialog(frame, "What kind of ship facts would you like?",
+  				"Fun Facts?",
+  				JOptionPane.YES_NO_CANCEL_OPTION,
+  				JOptionPane.QUESTION_MESSAGE,
+  				null, options1, options1[2]);
+		}
+	
+		public static void aircraftCarrier()
+		{
+			
+		//drop-down menu for Aircraft Carriers
+		final String[] aircraftCarriers = { "The Nimits class aircraft carrier can operate for 20 years without needing to refuel", "During WWII, the British had serious plans for making an aircraft carrier primarily out of wood pulp and ice", "In 1957, 10 Sydney University students dressed as pirates, boarded the aircraft carrier USS Bennington, reached the bridge, and announced over the PA that they had captured the ship" };
+		final JFrame frame = new JFrame();
+	    String AircraftType = (String) JOptionPane.showInputDialog(frame, 
+	            "Use the drop down menu to learn some fun facts about Aircraft Carriers...",
+	            "Aircraft Carriers",
+	            JOptionPane.QUESTION_MESSAGE, 
+	            null, 
+	            aircraftCarriers, 
+	            aircraftCarriers[0]);
+		}
+			
+	    public static void battleship()
+	    {
+	    	
+		//drop-down menu for Battleships
+		final String[] battleships = { "A Battleship is an armored warship with a battery consisting of heavy caliber guns", "A Battleship's job is to basically blow holes in other ships", "In Britain, their battleships are called Dreadnoughts" };
+		final JFrame frame = new JFrame();
+	    String battleshipType = (String) JOptionPane.showInputDialog(frame, 
+	            "Use the drop down menu to learn some fun facts about Aircraft Carriers...",
+	            "Aircraft Carriers",
+	            JOptionPane.QUESTION_MESSAGE, 
+	            null, 
+	            battleships, 
+	            battleships[0]);
+	    }
+	    
+	    public static void cruiser()
+	    {
+	    
+	  //drop-down menu for Cruisers
+	  		final String[] cruisers = { "The 1884 Navy Appropriation Act authorized the construction of cruisers, and this marked the transition from wood to steel and steam", "The USS New York was the first armored cruiser", "The fleet base at Pearl Harbor, Hawaii was ceremonially opened when the armored cruiser USS California steamed through the channel" };
+	  		final JFrame frame = new JFrame();
+	  	    String crusierType = (String) JOptionPane.showInputDialog(frame, 
+	  	            "Use the drop down menu to learn some fun facts about Aircraft Carriers...",
+	  	            "Aircraft Carriers",
+	  	            JOptionPane.QUESTION_MESSAGE, 
+	  	            null, 
+	  	            cruisers, 
+	  	            cruisers[0]);
+	    }
+	    
+	    public static void submarine()
+	    {
+	  	    
+	  	//drop-down menu for Submarines
+	  		final String[] submarines = { "Submarines use ballast tanks to hold water, allowing them to submerge when necessary", "Both sides of the American Civil War built and used submarines", "Both the United States and Soviet Union maintained significant submarine fleets during the Cold War" };
+	  		final JFrame frame = new JFrame();
+	  	    String submarineType = (String) JOptionPane.showInputDialog(frame, 
+	  	            "Use the drop down menu to learn some fun facts about Aircraft Carriers...",
+	  	            "Aircraft Carriers",
+	  	            JOptionPane.QUESTION_MESSAGE, 
+	  	            null, 
+	  	            submarines, 
+	  	            submarines[0]);
+	    }
+	  	 
+	    public static void destroyer()
+	    {
+	    	
+	  	//drop-down menu for Destroyers
+	  		final String[] destroyers = { "Destroyers are smaller ships that specialize in anti-ship, and anti-submarine warfare", "Destroyers carry missiles that will aquire their targets underwater to strike other ships and submarines", " Destroyers are fast, manuverable and long endurance ships" };
+	  		final JFrame frame = new JFrame();
+	  	    String destroyerType = (String) JOptionPane.showInputDialog(frame, 
+	  	            "Use the drop down menu to learn some fun facts about Aircraft Carriers...",
+	  	            "Aircraft Carriers",
+	  	            JOptionPane.QUESTION_MESSAGE, 
+	  	            null, 
+	  	            destroyers, 
+	  	            destroyers[0]);
+	    }
+	  	    
+	  	    
+		
+		
 		
 		
 
