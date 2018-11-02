@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
 
+import javax.swing.ImageIcon;
+
 import javax.swing.JOptionPane;
 
 import java.util.Scanner;
