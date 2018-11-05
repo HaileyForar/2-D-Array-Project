@@ -35,7 +35,11 @@ public class BattleShipRunner extends JFrame
 		
 		
 				BattleshipDatabase.fillNavy();
-				introToTheGame();
+			    nameOfUser();
+			    mission();
+			    typesOfShips();
+			    challenge();
+			    reference();
 			    battleshipPlacement();
 				fillLayout();
 	
@@ -71,17 +75,38 @@ public class BattleShipRunner extends JFrame
 				
 		}
 		
-		public static void introToTheGame()
+		public static void nameOfUser()
 		{
 			//asks what your name is to start off the program
-			name = JOptionPane.showInputDialog("What is your name?");  
-			
+			ImageIcon icon = new ImageIcon(("battleshipLogo.png"));	
+			name = JOptionPane.showInputDialog("What is your name?"); 
+		}
+		
+		public static void mission()
+		{
 			//Contains basic information about the game and how to play
+			ImageIcon icon = new ImageIcon(("mission.jpg"));
 			JOptionPane.showMessageDialog(frame, name + ", your mission, if you choose to accept it, is to sink all the warships!");
+		}
+		
+		public static void typesOfShips()
+		{
+			ImageIcon icon = new ImageIcon(("typesOfShips.gif"));
 			JOptionPane.showMessageDialog(frame, "There are 5 differend ships: Aircraft Carrier, Battleship, Cruiser, Submarine, and Destroyer!");
+		}
+		
+		public static void challenge()
+		{
+			ImageIcon icon = new ImageIcon(("challenge.png"));
 			JOptionPane.showMessageDialog(frame, "The challenge is to sink the ships in the fewest number of guesses possible... Let's see if you can sailor!");
+		}
+		
+		public static void reference()
+		{
+			ImageIcon icon = new ImageIcon(("xAndO.jpg"));
 			JOptionPane.showMessageDialog(frame, "For reference: X = Hit and O = Miss");
 		}
+		
 		
 		public static void battleshipPlacement()
 		{
